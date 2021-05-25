@@ -52,6 +52,7 @@ public class IotNode {
                if (response.isSuccessful()) { // Dotaz na server bol neúspešný
                    //Získanie údajov vo forme inštancie triedy WeatherData
                    List<WeatherData> data = response.body();
+                   if(data == null) return 0.0;
                    return  calculateAverage(data);
                }
        }
@@ -59,6 +60,7 @@ public class IotNode {
        {
            e.printStackTrace();
        }
+
 
        return  0.0;
     }
