@@ -12,7 +12,10 @@ import java.util.Map;
 
 public interface WeatherStationService {
 
-    // ... getCurrentWeatherAsMap(station);
+    @GET("/weather/{station}/current")
+    Call<Map<String, String>> getCurrentWeatherAsMap(
+            @Path("station") String station);
+
 
 
     // ... getCurrentWeatherAsMap(station, fields);
